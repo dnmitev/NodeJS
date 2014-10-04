@@ -1,0 +1,2 @@
+run first npm start to start all the thing like downloading the needed node_modules. In case it doesn't start try runnig first
+npm install after that bower install. If everything is ok you can view the result on localhost:8000
