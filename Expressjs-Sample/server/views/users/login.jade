@@ -1,0 +1,18 @@
+extends ../shared/layout
+block main-content
+    .jumbotron.col-md-6.col-md-offset-3
+        form(method="post" class="form-horizontal")
+            fieldset
+                legend Login
+                .form-group
+                    label(for="username" class="col-sm-4") Username
+                    .col-lg-8
+                        input(id="username" class="form-control" name="username" type="text" placeholder="Username..." required="true")
+                .form-group
+                    label(for="password" class="col-sm-4") Password
+                    .col-lg-8
+                        input(id="password" class="form-control" name="password", type="password" placeholder="Password..." required="true")
+                .form-group
+                    .col-lg-10.pull-right
+                        input(type="submit" class="btn btn-lg pull-right col-sm-offset-1" value="Login")
+                        input(type="reset" class="btn btn-lg pull-right col-sm-offset-1" value="Clear")
