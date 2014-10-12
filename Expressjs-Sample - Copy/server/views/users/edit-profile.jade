@@ -1,0 +1,29 @@
+extends ../index
+block main-content
+    if(currentUser)
+        .row
+            .col-md-3
+            .col-lg-6
+                .well.bs-component
+                    form.form-horizontal.form-Login(method="post" enctype="multipart/form-data")
+                        input(type="hidden" name="_id" value="#{currentUser._id}")
+                        legend Edit Profile
+                        .form-group
+                            label.col-lg-3.control-label First Name
+                            .col-lg-9
+                                input.form-control(type='text', placeholder='First Name', name="firstName" value="#{currentUser.firstName || ''}")
+
+                        .form-group
+                            label.col-lg-3.control-label Last Name
+                            .col-lg-9
+                                input.form-control(type='text', placeholder='Last Name', name="lastName" value="#{currentUser.lastName || ''}")
+
+                        .form-group
+                            label.col-lg-3.control-label New Photo
+                            .col-lg-9
+                                .btn.btn-primary.upload
+                                    | Select Image...
+                                    input(type='file' name='photo')
+
+                        button.btn.btn-primary.btn-info.btn-block(type='submit') Edit Profile
+                    a.btn.btn-default.btn-sm.btn-block(href='/profile') Cancel
